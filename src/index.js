@@ -3,21 +3,17 @@ import PropTypes from "prop-types";
 import Emoji from "./renderer";
 export { toArray } from "./renderer";
 
-let protocol = "http";
-
-if (typeof location !== "undefined" && location.protocol === "https:") {
-  protocol = "https";
-}
+let protocol = "https";
 
 export default Emoji;
 
 export function Twemoji({ svg, options, ...rest }) {
-  const size = svg ? "" : "72x72";
-  const ext = svg ? "svg" : "png";
+  const size = "";
+  const ext = "svg";
 
   options = {
     protocol,
-    baseUrl: `//twemoji.maxcdn.com/2/${svg ? "svg/" : ""}`,
+    baseUrl: `//twemoji.maxcdn.com/2/svg/`,
     size,
     ext,
     ...options
@@ -33,13 +29,11 @@ Twemoji.propTypes = {
 };
 
 export function Emojione({ svg, options, ...rest }) {
-  const ext = svg ? "svg" : "png";
-
   options = {
     protocol,
-    baseUrl: `//cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/${ext}/`,
+    baseUrl: `//cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/`,
     size: "",
-    ext,
+    ext: "svg",
     ...options
   };
 
