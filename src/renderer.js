@@ -39,6 +39,7 @@ export function toArray(text, options = {}) {
       <img
         key={i}
         src={src}
+        alt={match}
         style={style}
         className={options.className}
         {...options.props}
